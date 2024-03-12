@@ -33,7 +33,10 @@ return [
 
     'lifetime' => env('SESSION_LIFETIME', 120),
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     'expire_on_close' => false,
 
     /*

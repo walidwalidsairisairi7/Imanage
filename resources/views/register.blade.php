@@ -9,8 +9,12 @@
 
 </head>
 <body>
+<<<<<<< HEAD
       <form method="POST" >
         @csrf
+=======
+    <form class="form_container" method="GET">
+>>>>>>> origin/master
         <div class="logo_container"></div>
         <div class="title_container">
           <p class="title">Create your Account</p>
@@ -46,7 +50,11 @@
           <span>Sign Up</span>
         </button>
 
+<<<<<<< HEAD
         <p class="note">Terms of use &amp; Conditions</p>
+=======
+        <p class="note">Terms of use &amp; Conditions<a href="{route{'/login'}}"></a></p>
+>>>>>>> origin/master
       </form>
 </body>
 </html>
