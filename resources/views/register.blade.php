@@ -9,7 +9,8 @@
 
 </head>
 <body>
-    <form class="form_container" method="POST">
+      <form method="POST" >
+        @csrf
         <div class="logo_container"></div>
         <div class="title_container">
           <p class="title">Create your Account</p>

@@ -19,6 +19,6 @@ use App\Http\Controllers\API\UserController;
 //     return $request->user();
 // });
 
-
+Route::middleware('auth:sanctum')->post('/logout', 'Api\UserController@logoutUser')->name('logout');
 Route::post('/auth/register',[UserController::class,'createUser']);
 Route::post('/auth/login',[UserController::class,'loginUser']);
