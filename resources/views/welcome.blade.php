@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2>dashboard</h2>
-    @include('layouts.header')
-    
+    {{-- @include('layouts.header') --}}
+
 </body>
 </html>
