@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <form class="form_container" method="POST">
+    <form class="form_container" method="GET">
         <div class="logo_container"></div>
         <div class="title_container">
           <p class="title">Create your Account</p>
@@ -45,7 +45,7 @@
           <span>Sign Up</span>
         </button>
 
-        <p class="note">Terms of use &amp; Conditions</p>
+        <p class="note">Terms of use &amp; Conditions<a href="{route{'/login'}}"></a></p>
       </form>
 </body>
 </html>

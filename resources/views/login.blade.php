@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <form class="form_container"  method="POST">
+    <form class="form_container"  method="GET">
         <div class="logo_container"></div>
         <div class="title_container">
           <p class="title">Login to your Account</p>
@@ -67,7 +67,7 @@
           </svg>
           <span>Sign In with Apple</span>
         </button>
-        <p class="note">Terms of use &amp; Conditions</p>
+        <p class="note">Terms of use &amp; Conditions </p>
       </form>
 </body>
 </html>

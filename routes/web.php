@@ -20,8 +20,12 @@ Route::get('/', function () {
 
 
 
+
+
 Route::get('/register', [UserController::class,'createUser']);
 Route::get('/login', [UserController::class,'loginUser']);
+
+
 
 
 

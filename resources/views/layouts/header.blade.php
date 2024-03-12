@@ -7,8 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>dashboard</h2>
-    @include('layouts.header')
-    
+    <nav>
+        <a href="">About</a>
+        <a href="">Contact</a>
+        <a href="">Nothing</a>
+    </nav>
 </body>
 </html>
