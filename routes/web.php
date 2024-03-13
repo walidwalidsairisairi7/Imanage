@@ -18,3 +18,8 @@ Route::post('/login', [UserController::class, 'loginUser']);
 
 Route::post('/logout', [UserController::class, 'logoutUser'])->middleware(['auth:sanctum'])->name('logout');
 
+
+Route::get('/students', function () {
+    return view('students');
+});
+
