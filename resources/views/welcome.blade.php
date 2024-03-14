@@ -1,7 +1,6 @@
 @extends('layouts.default')
 
-    @section('content')
-      
+    @section('content') 
     <div class="container px-6 mx-auto grid">
       <h4
       class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300"
