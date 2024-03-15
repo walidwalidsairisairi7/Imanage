@@ -6,16 +6,19 @@
       <thead>
         <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
           <th class="px-4 py-3">id</th>
-          <th class="px-4 py-3">Students</th>
+          <th class="px-4 py-3">Teachers</th>
           <th class="px-4 py-3">phone</th>
           <th class="px-4 py-3">email</th>
           <th class="px-4 py-3"> date of birth</th>
-          <th><a href="{{ route('students.create') }}"><button class="add"> Add</button></a></th>
+          <th><a href="{{ route('teachers.create') }}"><button class="add"> Add</button></a></th>
+          {{-- <th><a href="{{ route('teachers.show', $trs->id ) }}"><button class="add"> Read</button></a></th> --}}
+          <th><a href="{{ route('teachers.edit', $trs->id ) }}"><button class="add"> Edit</button></a></th>
+          <th><a href="{{ route('teachers.destroy', $trs->id ) }}"><button class="add"> Delete</button></a></th>
         </tr>
       </thead>
       <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-        @if($student->count()>0)
-            @foreach($student as $rs )
+        @if($teachers->count()>0)
+            @foreach($teachers as $trs )
                 <tr class="text-gray-700 dark:text-gray-400">
                     <td>{{$loop->iteration}}</td>
                 <td class="px-4 py-3">
@@ -26,26 +29,28 @@
                         <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                     </div>
                     <div>
-                        <p class="font-semibold">{{$rs->nom }} {{$rs->prenom}}</p>
-                        <p class="text-xs text-gray-600 dark:text-gray-400">{{$rs->cin}}</p>
+                        <p class="font-semibold">{{$trs->nom }} {{$trs->prenom}}</p>
+                        <p class="text-xs text-gray-600 dark:text-gray-400">{{$trs->cin}}</p>
                     </div>
                     </div>
                 </td>
                 <td class="px-4 py-3 text-sm">
-                    {{$rs->phone}}
+                    {{$trs->phone}}
                 </td>
                 <td class="px-4 py-3 text-xs">
                     <span class="px-4 py-3 text-sm">
-                        {{$rs->email}}
+                        {{$trs->email}}
                     </span>
                 </td>
                 <td class="px-4 py-3 text-sm">
-                    {{$rs->dateN}}
+                    {{$trs->dateN}}
+                </td>
+                <td class="px-4 py-3 text-sm">
+                    <a href="{{ route('teachers.show', $trs->id ) }}"><button class="add"> Read</button></a>
                 </td>
                 <td class="px-4 py-3">
                     <div class="flex items-center space-x-4 text-sm">
-                   <a href=""> <button class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Edit">
-                        <svg class="w-5 h-5" aria-hidden="true"  fill="currentColor" viewBox="0 0 20 20">
+                        <a href="{{ route('teachers.edit', $trs->id ) }}"><button class="add"> Edit</button></a>                        <svg class="w-5 h-5" aria-hidden="true"  fill="currentColor" viewBox="0 0 20 20">
                         <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path>
                         </svg>
                     </button></a>
@@ -70,7 +75,7 @@
         @else
         <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
             <td class="px-4 py-3">
-                Student Not Found
+                teachers Not Found
             </td>
         </tr>
         @endif
