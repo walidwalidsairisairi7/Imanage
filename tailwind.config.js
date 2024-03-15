@@ -6,4 +6,14 @@ export default {
   },
   plugins: [],
 }
+const withMT = require("@material-tailwind/html/utils/withMT");
+
+module.exports = withMT({
+  content: ["./resources/views/test.blade.php"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+});
+
 

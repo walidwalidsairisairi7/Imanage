@@ -3,31 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Route;
 use App\Models\Teacher;
 
 class TeacherController extends Controller
 {
     public function index()
     {
-        $teachers = Teacher::orderBy('created_at','DESC')->get();
-        return view('teacher',compact( 'teachers'));
+        $teacher=Teacher::orderBy('created_at','ASC')->get();
+        return view('teacher.teacher', compact('teacher'));
     }
-
-
     public function create()
     {
-        return view('createTeacher');
+        return view('teacher.createTeacher');
     }
-
-
-
+    
     public function store(Request $request)
     {
         Teacher::create($request->all());
-        return redirect()->route('teachers.index' )->with('seccess');
+        return redirect()->route('teachers.index')->with('success', 'Teacher created successfully');
     }
-
-
     public function show(string $id)
     {
         $teachers=Teacher::findOrFail($id);
@@ -36,7 +32,7 @@ class TeacherController extends Controller
 
     public function edit(string $id){
         $teachers=Teacher::findOrFail($id);
-        return view('editTeacher',compact('teachers'));
+        return view('teacher.editTeacher',compact('teachers'));
     }
 
 
@@ -50,6 +46,6 @@ class TeacherController extends Controller
     public function  destroy(string $id){
         $teachers= teacher::findOrFail( $id );
         $teachers -> delete();
-        return redirect()->route('teachers')->with('seccess');
+        return redirect()->route('teachers')->with('success');
     }
 }

@@ -92,7 +92,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="{{route('teachers.index')}}"
+                href="{{ route('teachers.index') }}"
               >
                 <svg
                   class="w-5 h-5"
@@ -114,7 +114,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="Class.html"
+                href="{{ route('classes.index') }}"
               >
                 <svg
                   class="w-5 h-5"
@@ -159,7 +159,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="Formation.html"
+                href="{{ route('formations.index') }}"
               >
                 <svg
                   class="w-5 h-5"
