@@ -10,14 +10,14 @@ class StudentController extends Controller
 {
     public function index()
     {
-        $student=Student::orderBy('created_at','DESC')->get();
+        $student=Student::orderBy('created_at','ASC')->get();
         return view('student', compact('student'));
     }
     public function create()
     {
-        return view('createStudent');
+        return view('student.createStudent');
     }
-
+    
     public function store(Request $request)
     {
         Student::create($request->all());
