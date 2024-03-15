@@ -10,6 +10,7 @@ class Formation extends Model
     use HasFactory;
     protected $fillable = [
         'nom',
-        'duree'
+        'duree',
+        'dateDebut'
     ];
 }

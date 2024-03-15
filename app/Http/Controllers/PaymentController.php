@@ -14,12 +14,12 @@ class PaymentController extends Controller
     public function index()
     {
         $payment=Payment::orderBy('created_at','ASC')->get();
-        return view('payment', compact('payment'));
+        return view('payment.payment', compact('payment'));
     }
     public function create()
     {
         $studentIds = Student::select('id', 'nom')->get();
-        return view('createPayment', ['studentIds' => $studentIds]);
+        return view('payment.createPayment', ['studentIds' => $studentIds]);
         
     }
 

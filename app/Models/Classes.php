@@ -11,10 +11,11 @@ class Classes extends Model
     protected $fillable = [
         'nom'
     ];
-    public function student()
-    {
-        return $this->belongsTo(Student::class);
-    }
+
+    public function students()
+{
+    return $this->belongsToMany(Student::class);
+}
     public function teacher()
     {
         return $this->belongsTo(Teacher::class);
@@ -23,4 +24,11 @@ class Classes extends Model
     {
         return $this->belongsTo(Formation::class);
     }
+    public function create()
+{
+    // Retrieve classes with fewer than 20 students
+    $classes = Classes::withCount('students')->having('students_count', '<', 20)->get();
+    
+    return view('student.createStudent', compact('classes'));
+}
 }
