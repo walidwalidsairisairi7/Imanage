@@ -5,9 +5,8 @@ use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\TeacherController;
-use App\Http\Controllers\FormationController;
 use App\Http\Controllers\ClassController;
-
+use App\Http\Controllers\FormationController;
 
 
 
@@ -34,6 +33,17 @@ Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [UserController::class, 'loginUser']);
 Route::post('/logout', [UserController::class, 'logoutUser'])->middleware(['auth:sanctum'])->name('logout');
 
+Route::controller(TeacherController::class)->prefix("teachers")->group(function(){
+    Route::get('/','index')->name('teachers.index');
+    Route::get('create','create')->name('teachers.create');
+    Route::post('store','store')->name('teachers.store');
+    Route::get('show/{id}','show')->name('teachers.show');
+    Route::get('edit/{id}','edit')->name('teachers.edit');
+    Route::put('edit/{id}','update')->name('teachers.update');
+    Route::delete('destroy/{id}','destroy')->name('teachers.destroy');
+});
+
+
 
 //student
 
@@ -46,10 +56,21 @@ Route::put('/editStudent/{id}', [StudentController::class, 'edit'])->name('stude
 
 //teacher
 
+// Route::controller(TeacherController::class)->prefix("teachers")->group(function(){
+//     Route::get('/','index')->name('teachers.index');
+//     Route::get('create','create')->name('teachers.create');
+//     Route::post('store','store')->name('teachers.store');
+//     Route::get('show/{id}','show')->name('teachers.show');
+
+//     Route::delete('destroy/{id}','destroy')->name('teachers.destroy');
+// });
 
 Route::get('/teachers', [TeacherController::class, 'index'])->name('teachers.index');
 Route::get('/createTeacher', [TeacherController::class, 'create'])->name('teachers.create');
+Route::get('/editTeacher/{id}', [TeacherController::class, 'edit'])->name('teachers.edit');
+Route::put('/editTeacher/{id}', [TeacherController::class, 'update'])->name('teachers.update');
 Route::post('/teacherstore', [TeacherController::class, 'store'])->name('teachers.store');
+
 
 
 //payment

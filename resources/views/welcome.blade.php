@@ -5,6 +5,7 @@
       <h4
       class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300"
     >
+
       Table with actions
     </h4>
     <div class="w-full overflow-hidden rounded-lg shadow-xs">
@@ -30,6 +31,7 @@
                   <!-- Avatar with inset shadow -->
                   <div
                     class="relative hidden w-8 h-8 mr-3 rounded-full md:block"
+
                   >
                     <img
                       class="object-cover w-full h-full rounded-full"
@@ -96,6 +98,7 @@
                         clip-rule="evenodd"
                       ></path>
                     </svg>
+
                   </button>
                 </div>
               </td>
@@ -133,6 +136,7 @@
               <td class="px-4 py-3 text-xs">
                 <span
                   class="px-2 py-1 font-semibold leading-tight text-orange-700 bg-orange-100 rounded-full dark:text-white dark:bg-orange-600"
+
                 >
                   Pending
                 </span>
@@ -640,6 +644,7 @@
               </td>
             </tr>
 
+
             <tr class="text-gray-700 dark:text-gray-400">
               <td class="px-4 py-3">
                 <div class="flex items-center text-sm">
@@ -718,6 +723,7 @@
             </tr>
           </tbody>
         </table>
+
       </div>
       <div
         class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800"
