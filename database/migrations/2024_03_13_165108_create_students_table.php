@@ -19,8 +19,6 @@ return new class extends Migration
             $table->date('dateN');
             $table->integer('phone'); 
             $table->string('email');
-            $table->unsignedBigInteger('class_id');
-            $table->foreign('class_id')->references('id')->on('classes'); // Change 'class' to 'classes'
             $table->timestamps();
         });
         

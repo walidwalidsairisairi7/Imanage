@@ -9,7 +9,6 @@ use App\Http\Controllers\ClassController;
 use App\Http\Controllers\FormationController;
 
 
-
 Route::get('/', function () {
     return view('welcome');
 })->middleware(['auth:sanctum', 'verified'])->name('welcome');
@@ -93,5 +92,5 @@ Route::get('/createFormation', [FormationController::class, 'create'])->name('fo
 
 
 Route::get('/classes', [ClassController::class, 'index'])->name('classes.index');
-Route::get('/createClass', [ClassController::class, 'create'])->name('classes.create');
-Route::post('/classesstore', [ClassController::class, 'store'])->name('classes.store');
+Route::get('/createClasses', [ClassController::class, 'create'])->name('classes.create');
+Route::post('/classes', [ClassController::class, 'store'])->name('classes.store');

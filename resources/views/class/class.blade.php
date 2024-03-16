@@ -26,16 +26,17 @@
                         <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                     </div>
                     <div>
-                        <p class="font-semibold">{{$rs->teacher }} </p>
+                        <p class="font-semibold">{{$rs->teacher->nom }} </p>
                     </div>
                     </div>
                 </td>
 
                 <td class="px-4 py-3 text-xs">
                     <span class="px-4 py-3 text-sm">
-                        {{$rs->formation}}
+                        {{$rs->formation->nom}}
                     </span>
                 </td>
+ 
                 {{-- <td class="px-4 py-3 text-sm">
                     {{$rs->date}}
                 </td> --}}

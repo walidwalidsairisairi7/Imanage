@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Classes;
 use App\Models\Teacher;
 use App\Models\Formation;
+use App\Models\Student;
 
 
 class ClassController extends Controller
@@ -30,8 +31,9 @@ class ClassController extends Controller
     {
         $teachers = Teacher::all();
         $formations = Formation::all();
-        
-        return view('class.createClass', compact('teachers', 'formations'));
+        $students = Student::all(); // Assuming you want all students
+
+        return view('class.createClass', compact('teachers', 'formations', 'students'));
     }
 
     /**
@@ -43,20 +45,22 @@ class ClassController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'nom' => 'required',
             'teacher_id' => 'required|exists:teachers,id',
             'formation_id' => 'required|exists:formations,id',
+            'student_id' => 'required|exists:students,id',
+            // You may need to adjust the validation rule for student_id[] as per your requirement
         ]);
-    
-        // Create a new instance of the Classes model
+
         $class = new Classes();
-    
-        // Fill the class attributes with the validated data
-        $class->fill($request->all());
-    
-        // Save the class instance to the database
+        $class->nom = $request->input('nom');
+        $class->teacher_id = $request->input('teacher_id');
+        $class->formation_id = $request->input('formation_id');
         $class->save();
-    
+
+        // Assuming you have a many-to-many relationship between Class and Student
+        $class->students()->attach($request->input('student_id'));
+
         return redirect()->route('classes.index')->with('success', 'Class created successfully');
     }
 

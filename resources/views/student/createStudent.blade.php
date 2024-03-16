@@ -12,10 +12,10 @@
         <input type="number" class="bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" name="phone" placeholder="Phone Number">
         <input type="text" class="bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" name="cin" placeholder="CIN">
         <input type="date" class="bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" name="dateN" placeholder="Date of Birth">
-        <select name="class_id" class="bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150">
-          <option value="">Select Class</option>
-          @foreach($classes as $class)
-              <option value="{{ $class->id }}">{{ $class->name }}</option>
+        <select name="student_id[]" class="bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" multiple size="5">
+          <option value="">Select class</option>
+          @foreach($class as $class)
+              <option value="{{ $class->id }}">{{ $class->nom }}</option>
           @endforeach
       </select>
         <button type="submit" class="button">ADD Student</button>

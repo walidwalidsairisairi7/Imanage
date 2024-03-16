@@ -18,9 +18,9 @@ class Student extends Model
         'email',
         'class'
     ];
+    // Student.php
     public function classes()
-{
-    return $this->belongsToMany(Classes::class);
-}
-
+    {
+        return $this->belongsToMany(Classes::class, 'classes_student');
+    }
 }

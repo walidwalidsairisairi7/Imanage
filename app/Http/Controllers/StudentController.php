@@ -16,9 +16,10 @@ class StudentController extends Controller
     }
     public function create()
     {  
-        $classes = Classes::withCount('students')->get();
+        $class = Classes::with('students')->get();
     
-        return view('student.createStudent', compact('classes'));
+        // return view('student.createStudent', compact('classes'));
+        return view('student.createStudent', compact('class'));
     }
     
     public function store(Request $request)

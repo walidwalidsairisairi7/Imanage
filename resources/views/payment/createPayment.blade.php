@@ -8,15 +8,7 @@
             @csrf
             <input type="text" class="bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" id="amount" name="amount" placeholder="amount">
             <input type="date" class="bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" id="date" name="date" placeholder="date">
-            
-            <!-- Select field for student_id -->
-            <select class="bg-gray-100 text-gray-800 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" id="student_id" name="student_id">
-                <option value="">Select Student ID</option>
-                @foreach ($studentIds as $studentId)
-                    <option value="{{ $studentId->id }}">{{ $studentId->id }} - {{ $studentId->nom }}</option>
 
-                @endforeach
-            </select>
 
             <button type="submit" class="button">ADD Payment</button>
         </form>
