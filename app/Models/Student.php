@@ -15,7 +15,8 @@ class Student extends Model
         'prenom',
         'dateN',
         'phone',
-        'email'
+        'email',
+        'class'
     ];
     public function classes()
 {

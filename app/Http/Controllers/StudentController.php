@@ -15,25 +15,26 @@ class StudentController extends Controller
         return view('student.student', compact('student'));
     }
     public function create()
-    {
-        $classes = Classes::withCount('students')->having('students_count', '<', 20)->get();
+    {  
+        $classes = Classes::withCount('students')->get();
     
-        return view('student.createStudent', ['classes' => $classes]);    }
+        return view('student.createStudent', compact('classes'));
+    }
     
     public function store(Request $request)
     {
         // Validate student data
-        
+    
         $student = Student::create($request->all());
-        
+    
         // Associate student with class if a class is selected
         if ($request->filled('class_id')) {
             $class = Classes::findOrFail($request->class_id);
             $class->students()->attach($student->id);
         }
         return redirect()->route('students.index')->with('success', 'Student created successfully');
-
     }
+
      public function edit(string $id)
     {
         $student=Student::findOrFail($id);

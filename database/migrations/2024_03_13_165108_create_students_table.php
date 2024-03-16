@@ -13,14 +13,17 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->primary('cin');
+            $table->string('cin')->unique();
             $table->string('nom');
             $table->string('prenom');
             $table->date('dateN');
             $table->integer('phone'); 
             $table->string('email');
+            $table->unsignedBigInteger('class_id');
+            $table->foreign('class_id')->references('id')->on('classes'); // Change 'class' to 'classes'
             $table->timestamps();
         });
+        
     }
     /**
      * Reverse the migrations.

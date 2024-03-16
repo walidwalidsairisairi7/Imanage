@@ -10,6 +10,7 @@ use App\Http\Controllers\ClassController;
 
 
 
+
 Route::get('/', function () {
     return view('welcome');
 })->middleware(['auth:sanctum', 'verified'])->name('welcome');
